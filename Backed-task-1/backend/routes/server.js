@@ -1,5 +1,4 @@
 import {Router} from 'express'
-// import {}
 const router = Router()
 
 router.get('/products/:id', (req, res) => {
