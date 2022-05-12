@@ -1,3 +1,9 @@
+const cors = require('cors')
+const express = require('express')
+const app = express()
+
+const PORT = process.env.PORT || 3000;
+
 let posts = [
     {
       id: 1, 
@@ -11,9 +17,10 @@ let posts = [
     },
 ]
 
-const cors = require('cors')
-const express = require('express')
-const app = express()
+
+
+
+
 
 app.use(cors())
  
@@ -21,6 +28,21 @@ app.get('/products/:id', function (req, res, next) {
   res.json(posts);
 })
 
-app.listen(3000, function () {
-  console.log('CORS-enabled web server listening on port 3000')
-})
+// app.listen(3000, function () {
+//   console.log('CORS-enabled web server listening on port 3000')
+// })
+
+async function start() {
+  await mongoose.connect('mongodb+srv://Daniel:1q2w3e4r@cluster0.ipjpf.mongodb.net/todos',
+      err => {
+          if (err) throw err;
+          // console.log('connected to MongoDB')
+          mongoose.Promise = global.Promise;
+          app.listen(PORT, () => {
+              console.log('Server has been started...');
+          });
+      });
+}
+
+
+start();
