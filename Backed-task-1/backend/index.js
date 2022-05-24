@@ -19,12 +19,12 @@ app.get('/', function (req, res) {
 
 // app.use(rout);
 
-app.listen(3000, function () {
-  console.log(`SERVER RUNNING ON PORT ${PORT}`);
-})
-
+// app.listen(3000, function () {
+//   console.log(`SERVER RUNNING ON PORT ${PORT}`);
+// })
+ 
 async function start() {
-  await mongoose.connect('mongodb+srv://Daniel:1q2w3e4r@cluster0.ipjpf.mongodb.net/todos',
+  await mongoose.connect('mongodb+srv://Daniel:1q2w3e4r@cluster0.ipjpf.mongodb.net/?retryWrites=true&w=majority',
     err => {
       if (err) throw err;
       console.log('connected to MongoDB')
