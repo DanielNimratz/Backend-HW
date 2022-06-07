@@ -110,17 +110,7 @@ app.listen(5000, () => {
 //   title: '', 
 //   text: '', 
 // } 
-// edit post 
-// PATCH posts/:id  
-// payload => { 
-//   title: '', 
-//   text: '', 
-// } 
-// response => { 
-//   _id: '', 
-//   title: '', 
-//   text: '', 
-// } 
+
 
 
 // get post by id 
